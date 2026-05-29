@@ -7,4 +7,4 @@ chown -R node:node /home/node/.n8n 2>/dev/null || true
 export N8N_PORT="${PORT:-5678}"
 export N8N_HOST="${N8N_HOST:-0.0.0.0}"
 
-exec su-exec node /docker-entrypoint.sh
+exec su -s /bin/sh node -c "export N8N_PORT='${N8N_PORT}' N8N_HOST='${N8N_HOST}'; exec /docker-entrypoint.sh"

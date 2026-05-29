@@ -1,7 +1,6 @@
 FROM docker.n8n.io/n8nio/n8n:latest
 
 USER root
-RUN apk add --no-cache su-exec
 
 COPY railway-entrypoint.sh /railway-entrypoint.sh
 RUN chmod +x /railway-entrypoint.sh
